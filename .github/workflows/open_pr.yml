@@ -1,0 +1,15 @@
+name: Crear Entorno
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      
+jobs:
+   Crear-Entorno-PR:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+            echo Se ha creado la PR            
+            echo crear entorno "${{ github.actor }}" si no existe
+ 

@@ -1,0 +1,16 @@
+name: Destruir Entorno
+
+on:
+  pull_request_target:
+    types:
+      - closed
+
+jobs:
+  Destruir-Entorno-PR:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo Se ha mergeado a main la PR
+        echo eliminar entorno "${{ github.actor }}" si no se va a usar
+
